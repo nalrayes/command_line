@@ -26,4 +26,4 @@ test_run_pause: test_run_pause.c
 	cc -o test_run_pause test_run_pause.c 
 
 clean: 
-	rm -f *~ proj4 proj4.o *.o a.out test_run* core
+	rm -f *~ proj4 proj4.o *.o a.out test_run test_run_loop test_run_pause test_run_sleep core
