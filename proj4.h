@@ -17,6 +17,7 @@
 #define SEMICOLON 4
 #define PONDKEY   5   /*for pondkey*/
 #define PIPE      6   /*for pipe*/
+#define CD        7   /*for change directory*/
 
 #define MAXARG 512   /* max. no. command args*/
 #define MAXBUF 512   /* max. length input line */
@@ -34,6 +35,7 @@ int userinput( ) ;
 int gettok(char **outptr) ;
 
 int runcommand(char **cline, int where) ;
+
 
 
 #endif // PROJECT4_H

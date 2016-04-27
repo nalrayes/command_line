@@ -19,7 +19,8 @@ int userinput( ) {
     count = 0;
 
     while(1) {
-        if((c = getchar()) == EOF)
+        c = getchar();
+        if(c == EOF)
             return(EOF);
 
         if(count < MAXBUF)
@@ -69,7 +70,7 @@ int gettok(char **outptr) {
     // set the token pointer to the first token in the buffer
     *tok++ = *ptr;
 
-    // set the type variable depending
+    //set the type variable depending
     //on the token in the buffer
     switch(*ptr++) {
     case '\n':

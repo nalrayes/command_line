@@ -4,14 +4,19 @@
 int runcommand(char **cline, int where) {
     pid_t pid;
     int status;
-
+    if (strcmp(cline[0], "cd") == 0){
+        chdir(cline[1]);
+        printf("IN IF\n");
+        return 0;
+    }
     switch(pid=fork()) {
     case -1:
         perror(SHELL_NAME);
         return (-1);
+    //code for child
     case 0:
         execvp(*cline,cline);
-        //we should never get to this code, sice execve does not return
+        // we should never get to this code, since execve does not return
         perror(*cline);
         exit(1);
     }

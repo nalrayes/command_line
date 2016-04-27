@@ -24,8 +24,8 @@ int procline(void)
                 narg++;
             break;
 
-        case EOL:
-        case SEMICOLON:
+        case EOL: 
+        case SEMICOLON: 
         case AMPERSAND:
             if(toktype == AMPERSAND)
                 type = BACKGROUND;
@@ -35,13 +35,15 @@ int procline(void)
             if(narg != 0)
             {
                 arg[narg] = 0;
-                runcommand(arg,type);
+                printf("ARG: %s[]\n", arg[0]);
+                narg = 0;
+                printf("STATUS: %d\n",runcommand(arg,type));
             }
 
             if( toktype == EOL )
                 return;
-            narg = 0;
-            break;
+            // narg = 0;
+            break; 
         }
     }
 }
