@@ -35,14 +35,14 @@ int procline(void)
             if(narg != 0)
             {
                 arg[narg] = 0;
-                printf("ARG: %s[]\n", arg[0]);
+                printf("NARG: %d\n", narg);
                 narg = 0;
                 printf("STATUS: %d\n",runcommand(arg,type));
             }
 
             if( toktype == EOL )
                 return;
-            // narg = 0;
+            //narg = 0;
             break; 
         }
     }

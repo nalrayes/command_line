@@ -28,6 +28,10 @@ int userinput( ) {
 
         if(c == '\n' && count < MAXBUF) {
             inpbuf[count] = '\0';
+            printf("BUFFER: %s[]\n", inpbuf);
+            if (strcmp(inpbuf, "exit\n") == 0) {
+                return (EOF);
+            }
             return count;
         }
 

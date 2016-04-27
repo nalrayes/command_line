@@ -5,6 +5,9 @@ int runcommand(char **cline, int where) {
     pid_t pid;
     int status;
     if (strcmp(cline[0], "cd") == 0){
+        if (cline[1] == NULL) {
+            cline[1] = getenv("HOME");
+        }
         chdir(cline[1]);
         printf("IN IF\n");
         return 0;
