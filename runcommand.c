@@ -9,7 +9,6 @@ int runcommand(char **cline, int where) {
             cline[1] = getenv("HOME");
         }
         chdir(cline[1]);
-        printf("IN IF\n");
         return 0;
     }
     switch(pid=fork()) {

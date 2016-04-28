@@ -36,6 +36,9 @@ int gettok(char **outptr) ;
 
 int runcommand(char **cline, int where) ;
 
+void siginthandler(int sig_num);
+
+
 
 
 #endif // PROJECT4_H

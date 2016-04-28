@@ -1,11 +1,17 @@
 
 #include "proj4.h"
 
+void sigintHandler(int sig_num)
+{
+    signal(SIGINT, sigintHandler);
+    //printf("\n Cannot be terminated using Ctrl+C \n");
+    fflush(stdout);
+}
 
 int main()
 {
 
-
+	signal(SIGINT, sigintHandler);
     //run the shell until EOF (keyboard Ctrl+D) is detected
     while (userinput(  ) != EOF ) {
 
