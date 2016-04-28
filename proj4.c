@@ -28,5 +28,12 @@ Bugfix for bug 2:
 adding thing that catches a "cd"
 
 Bugfix for bug 3:
+hardcoding exit, making exit call cntrl-d
+
+Bugfix for bug 4:
+install handler that uses fflush
+
+Bugfix for bug 5:
+
 */
 
