@@ -10,6 +10,7 @@ int procline(void)
     int toktype;        // type of token in command
     int narg ;          // number of arguments so far
     int type;           //type =  FOREGROUND or BACKGROUND
+    int status;
 
 
     while ( 1 ) // loop forever
@@ -36,11 +37,16 @@ int procline(void)
             {
                 arg[narg] = 0;
                 narg = 0;
-                printf("STATUS: %d\n",runcommand(arg,type));
+                status = runcommand(arg, type);
+                printf("STATUS: %d\n", status);
             }
 
-            if( toktype == EOL )
+            // if (type == BACKGROUND)
+
+            if( toktype == EOL ){
+                waitpid(-1,&status,0);
                 return;
+            }
             //narg = 0;
             break; 
         }

@@ -22,17 +22,17 @@ int runcommand(char **cline, int where) {
         perror(*cline);
         exit(1);
     }
-    // code for parent
     // if background process print pid and exit
     // program is running in the background
     if(where == BACKGROUND) {
         printf("[Process id %d]\n",pid);
-        return (0);
+        exit(0);
     }
 
     // wait until process pid exits
     if (waitpid(pid,&status,0) == -1)
         return (-1);
-    else
+    else {
         return (status);
+    }
 }
