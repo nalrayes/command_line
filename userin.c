@@ -29,9 +29,6 @@ int userinput( ) {
 
         if(c == '\n' && count < MAXBUF) {
             inpbuf[count] = '\0';
-            if (strcmp(inpbuf, "exit\n") == 0) {
-                return (EOF);
-            }
             return count;
         }
 

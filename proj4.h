@@ -38,6 +38,10 @@ int runcommand(char **cline, int where) ;
 
 void siginthandler(int sig_num);
 
+void sigchldhandler(int sig_num);
+
+int execvpbg(const char *file, char *const argv[]);
+
 
 
 

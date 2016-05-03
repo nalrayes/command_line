@@ -38,13 +38,9 @@ int procline(void)
                 arg[narg] = 0;
                 narg = 0;
                 status = runcommand(arg, type);
-                printf("STATUS: %d\n", status);
             }
 
-            // if (type == BACKGROUND)
-
             if( toktype == EOL ){
-                waitpid(-1,&status,0);
                 return;
             }
             //narg = 0;
